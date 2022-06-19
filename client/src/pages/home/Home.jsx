@@ -19,13 +19,11 @@ const Home = ({ type }) => {
           {
             headers: {
               token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYThlMWFmMDNhYWI3ODU2NDhlMzZmZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NTQwMTM3MywiZXhwIjoxNjU1ODMzMzczfQ.PbB5UHCp3Xgh3XkFnQqzrDxYWtPZeq_4yg4S7jOcwrM",
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
             },
           }
         );
         setLists(res.data);
-        
-        
       } catch (err) {
         console.log(err);
       }
